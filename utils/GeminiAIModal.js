@@ -8,7 +8,7 @@ const {
   const genAI = new GoogleGenerativeAI(apiKey);
   
   const model = genAI.getGenerativeModel({
-    model: "gemini-1.5-flash",
+    model: "gemini-1.5-flash-latest", // Changed from "gemini-1.5-flash"
   });
   
   const generationConfig = {
@@ -21,11 +21,11 @@ const {
   
   const safetySettings = [
     {
-      category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+      category: HarmCategory. HARM_CATEGORY_HARASSMENT,
       threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
     },
     {
-      category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+      category:  HarmCategory.HARM_CATEGORY_HATE_SPEECH,
       threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
     },
     {
@@ -34,7 +34,7 @@ const {
     },
     {
       category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
-      threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+      threshold: HarmBlockThreshold. BLOCK_MEDIUM_AND_ABOVE,
     },
   ];
 
@@ -43,6 +43,3 @@ const {
       generationConfig,
       safetySettings,
     });
-  
-  
-  
